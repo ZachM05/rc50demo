@@ -1,0 +1,58 @@
+@import '../../../styles/breakpoints.scss';
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin-left: 100px;
+
+        @include sm-max {
+            margin-left: 15px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        margin-right: 100px;
+        gap: 25px;
+
+        div {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            box-shadow: 0.15em 0.15em 0.5em rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: all 0.25s linear;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .isLive {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(255, 17, 17);
+        }
+
+        .isNotLive {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(133, 15, 15);
+        }
+    }
+}

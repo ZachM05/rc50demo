@@ -1,0 +1,170 @@
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/variables.scss";
+
+.outer {
+    background: white;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.125);
+    border-radius: 15px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    @include sm-max {
+        height: 150px;
+        width: 150px;
+    }
+
+    .inner {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        * {
+            margin: 0;
+        }
+
+        h2 {
+            color: $henkel;
+            font-weight: 700;
+            font-size: 25px;
+            @include sm-max {
+                font-size: 18px;
+            }
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .values {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 0;
+            min-height: 77px;
+
+            @include sm-max {
+                min-height: 47px;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .value {
+                font-size: calc(300%);
+                line-height: 55px;
+                font-weight: 700;
+
+                @include sm-max {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+            }
+
+            .text {
+                font-size: calc(150%);
+                line-height: 55px;
+                font-weight: 700;
+
+                @include sm-max {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+            }
+
+            .unit {
+                font-size: 22px;
+                line-height: 22px;
+
+                @include sm-max {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+}
+
+.infoButton {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: flex-end;
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+
+        span {
+            opacity: 1;
+        }
+    }
+
+    .error {
+        svg {
+            height: 18px;
+            width: auto;
+            fill: $henkel;
+        }
+    }
+}
+
+.timeSelect {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0.15em 0.15em 0.5em rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0;
+    margin: 0 0 15px 0;
+
+    .active {
+        background-color: rgb(182, 182, 182);
+    }
+
+    li {
+        width: 60px;
+        height: 40px;
+        // border: 1px solid black;
+        border-right: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        cursor: pointer;
+
+        transition: all 0.15s linear;
+
+        @include sm-max {
+            width: 52px;
+            height: 35px;
+        }
+
+        &:hover {
+            background-color: rgb(182, 182, 182);
+        }
+
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        &:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+}

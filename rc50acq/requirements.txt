@@ -1,0 +1,2 @@
+websockets ~= 10.3
+umodbus ~= 1.0.4

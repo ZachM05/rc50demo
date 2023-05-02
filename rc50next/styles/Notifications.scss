@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.mantine-Notification-root {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125) 0px 28px 23px -7px,
+        rgba(0, 0, 0, 0.125) 0px 12px 12px -7px;
+    &::before {
+        background-color: $henkel;
+    }
+    div {
+        font-size: 15px;
+    }
+    .mantine-Notification-title {
+        color: black;
+    }
+    .mantine-Notification-description {
+        color: black;
+    }
+}

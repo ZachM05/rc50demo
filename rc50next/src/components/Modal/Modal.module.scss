@@ -1,0 +1,106 @@
+@import '../../../styles/breakpoints.scss';
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 110;
+}
+
+.modalContent {
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  width: 600px;
+  min-height: auto;
+  background-color: white;
+
+  @include md-max {
+    width: 90%;
+  }
+
+  .inner {
+    padding: 55px 45px 45px;
+    position: relative;
+
+    @include sm-max {
+      padding: 55px 25px 25px;
+    }
+  }
+
+  h2 {
+    font-size: 35px;
+    line-height: 40px;
+    margin: 0 0 15px;
+  }
+
+  p {
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    max-width: 400px;
+  }
+
+  .modalHeading {
+    text-align: center;
+  }
+
+
+}
+
+.closeButton {
+  background: none;
+  border: 0;
+  padding: 15px;
+  position: absolute;
+  top: 35px;
+  right: 35px;
+
+  @include sm-max {
+    top: 25px;
+    right: 25px;
+  }
+
+  > span {
+    opacity: .5;
+    position: relative;
+
+    &:before {
+      background: black;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 20px;
+      height: 2px;
+    }
+
+    &:after {
+      background: black;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 20px;
+      height: 2px;
+    }
+  }
+
+  &:hover, &:focus {
+    cursor: pointer;
+
+    span {
+      opacity: 1;
+    }
+  }
+}
