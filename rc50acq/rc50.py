@@ -5,7 +5,7 @@ from logging import Logger
 from datetime import datetime
 
 cmds: List[str] = [
-    "S_STATUS",
+    # "S_STATUS",
     "S_TEM_HUM",
     "S_LOW_LEVEL_STATUS",
     "S_PRESSURE",
@@ -24,7 +24,7 @@ cmds: List[str] = [
     "R_CH1_DISPENSING",
     "R_CH2_DISPENSING",
     "R_PRESSURE_STATUS",
-    "R_MCUID",
+    # "R_MCUID",
 ]
 
 data_snapshot = {
@@ -339,7 +339,7 @@ class RC50:
         return {
             "timestamp": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "host": self.host,
-            "mcuId": self.data["R_MCUID"],
+            # "mcuId": self.data["R_MCUID"],
             "systemPressure": self.data["S_PRESSURE"],
             "systemStatus": self.data["S_STATUS"],
             "runStatus": self.data["S_SYS_STATUS"],
